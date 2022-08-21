@@ -9,7 +9,6 @@ gem 'dotenv-rails'
 gem 'bootstrap'
 gem 'slim-rails' #slimファイルを使えるようにする
 gem 'html2slim' #既存のerbファイルをslimファイルに変換出来る様にする
-
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
