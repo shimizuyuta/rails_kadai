@@ -20,6 +20,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      logger.debug "ログ======userが作成された:#{@user.attributes.inspect}"
       redirect_to admin_user_url(@user), notice:"ユーザー「#{@user.name}」を登録しました。"
     else 
       render :new
@@ -30,16 +31,16 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to admin_user_url(@user), notice: "タスク#{task.name}を更新しました"
+      redirect_to admin_user_url(@user), notice: "タスク#{@user.name}を更新しました"
     else 
       render :edit
     end 
   end
 
-  def destory
+  def destroy
     @user = User.find(params[:id])
-    @user.destory
-    redirect_to admin_user_url, notice: "タスク#{task.name}を削除しました"
+    @user.destroy
+    redirect_to admin_users_url, notice: "タスク#{@user.name}を削除しました"
   end
   private
 

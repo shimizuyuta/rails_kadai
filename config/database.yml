@@ -20,19 +20,19 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['TASKLEAF_DATABASE_USERNAME'] %>  
-  password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %> 
-  host: localhost
-  port: 5432
+  # username: <%= ENV['TASKLEAF_DATABASE_USERNAME'] %>  
+  # password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %> 
+  # host: localhost
+  # port: 5432
 
 
 development:
   <<: *default
   database: taskleaf_development
-  username: <%= ENV['TASKLEAF_DATABASE_USERNAME'] %>
-  password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %>  
-  host: localhost
-  port: 5432
+  # username: <%= ENV['TASKLEAF_DATABASE_USERNAME'] %>
+  # password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %>  
+  # host: localhost
+  # port: 5432
 
   # username:  <%= ENV['TASKLEAF_DATABASE_USERNAME'] %> 
   # password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %> 
@@ -70,10 +70,10 @@ development:
 test:
   <<: *default
   database: taskleaf_test
-  username: <%= ENV['TASKLEAF_DATABASE_USERNAME'] %>  
-  password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %> 
-  host: localhost
-  port: 5432
+  # username: <%= ENV['TASKLEAF_DATABASE_USERNAME'] %>  
+  # password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %> 
+  # host: localhost
+  # port: 5432
 
   # username: taskleaf
   # password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %>
@@ -99,5 +99,5 @@ test:
 production:
   <<: *default
   database: taskleaf_production
-  username:  <%= ENV['TASKLEAF_DATABASE_USERNAME'] %> 
-  password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %>
+  # username:  <%= ENV['TASKLEAF_DATABASE_USERNAME'] %> 
+  # password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %>

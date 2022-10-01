@@ -10,7 +10,12 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports.
+  #本番環境ではfalseにする(trueの時はデバッグ用のerrorがでる)
   config.consider_all_requests_local = true
+  # エラーの場合のみログが出る
+  # config.log_level = :warn
+  # ログを1日ごとに出力
+  config.logger = logger.new('log/development.log','daily')
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

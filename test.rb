@@ -1,0 +1,2 @@
+User.create!(name:'admin2',email:'test2@example.com',password:'pass',password_confirmation:'pass',admin:false)
+User.create!(name:'admin3',email:'test3@example.com',password:'pass',password_confirmation:'pass',admin:true)
