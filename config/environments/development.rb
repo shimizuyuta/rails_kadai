@@ -15,7 +15,7 @@ Rails.application.configure do
   # エラーの場合のみログが出る
   # config.log_level = :warn
   # ログを1日ごとに出力
-  config.logger = logger.new('log/development.log','daily')
+  # config.logger = logger.new('log/development.log','daily')
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
