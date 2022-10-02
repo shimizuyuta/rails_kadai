@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     end 
 
     if @task.save
-      logger.debug "ログ====taskが作成された:#{@task.attributes.inspect}"
+      logger.debug "ログ===taskが作成された:#{@task.attributes.inspect}"
       redirect_to @task, notice:"タスク「#{@task.name}」を登録しました"
     else 
       render :new
