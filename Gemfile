@@ -9,6 +9,7 @@ gem 'dotenv-rails'
 # gem 'bcrypt'
 gem 'rails_autolink'
 gem 'bootstrap'
+gem 'ransack'
 gem 'slim-rails' #slimファイルを使えるようにする
 gem 'html2slim' #既存のerbファイルをslimファイルに変換出来る様にする
 # Use postgresql as the database for Active Record
