@@ -2,7 +2,13 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show,:edit,:update,:destroy]
   
   def index
-    @tasks = current_user.tasks.order(created_at: :desc) 
+    @q = current_user.tasks.ransack(params[:q])
+    logger.debug "log ======== #{params}"
+    # @tasks = @q.result(distinct: true)
+    # logger.debug "log ======== #{@tasks}"
+    # @tasks = current_user.tasks.order(created_at: :desc) 
+    @tasks = @q.result(distinct: true).recent
+        logger.debug "log ======== #{@tasks.length}:length+++"
   end
 
   def show
@@ -16,6 +22,7 @@ class TasksController < ApplicationController
     end 
 
     if @task.save
+      TaskMailer.creation_email(@task).deliver_now
       logger.debug "ログ===taskが作成された:#{@task.attributes.inspect}"
       redirect_to @task, notice:"タスク「#{@task.name}」を登録しました"
     else 
